@@ -12,24 +12,29 @@ import java.util.Scanner;
  * change the code to use enum instead String and add object oriented principles satisfy as comment in the code
  * @author sivagamasrinivasan
  * date 02/19
+ * modifier Anousheh Niazi
  */
 public class ArithmeticBase 
 {
+  public enum UserInput {PLUS,MINUS,TIMES,DIVIDE};
+  private UserInput userinput;
+  
  public double x,y;
     double calculate(double x, double y) 
         {
         Scanner sc =new Scanner(System.in);
-        System.out.println("enter String");
-        String s= sc.next();
-        switch (s.toUpperCase()) 
+        System.out.println("enter a number");
+        int userinput= sc.nextInt();
+        
+        switch (userinput) 
         {
-            case "PLUS":
+            case 0:
                 return x + y;
-            case "MINUS":
+            case 1:
                 return x - y;
-            case "TIMES":
+            case 2:
                 return x * y;
-            case "DIVIDE":
+            case 3:
                 return x / y;
             default:
                 throw new AssertionError("Unknown operations " + this);
